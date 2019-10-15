@@ -2,22 +2,22 @@
 @model List<Blog.Models.Post>
 
 
-<table>
+<table style="border: 1px solid black">
     <thead>
         <tr>
             <!-- TH significa head, que é o cabeçalho -->
-            <th>Título</th>
-            <th>Resumo</th>
-            <th>Categoria</th>
+            <th style="border: 1px solid black">Título</th>
+            <th style="border: 1px solid black">Resumo</th>
+            <th style="border: 1px solid black">Categoria</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var post in Model)
         {
-            <tr>
-                <td>@post.Titulo </td>
-                <td>@post.Resumo</td>
-                <td>@post.Categoria</td>
+            <tr >
+                <td style="border: 1px solid black">@post.Titulo </td>
+                <td style="border: 1px solid black">@post.Resumo</td>
+                <td style="border: 1px solid black">@post.Categoria</td>
             </tr>
 
         }
