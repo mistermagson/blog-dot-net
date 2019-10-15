@@ -1,0 +1,19 @@
+﻿@model Blog.Models.Post
+
+<form method="post" action="/Post/Altera">
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <label>
+        Título: <input name="titulo" value="@Model.Titulo" />
+    </label>
+
+    <label>
+        Resumo: <input name="resumo" value="@Model.Resumo" />
+    </label>
+
+    <label>
+        Categoria: <input name="categoria" value="@Model.Categoria"  />
+    </label>
+
+    <input type="submit" value="Alterar" />
+</form>

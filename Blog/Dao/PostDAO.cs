@@ -30,13 +30,42 @@ namespace Blog.Dao
             }
         }
 
-        internal List<Post> BuscaPorCategoria(string categoria)
+        public List<Post> BuscaPorCategoria(string categoria)
         {
             using (BlogContext context = new BlogContext())
             {
                 return context.Posts
                     .Where(p => p.Categoria.Contains(categoria))
                     .ToList();
+            }
+        }
+
+        public void Remove(int id)
+        {
+            using (BlogContext context = new BlogContext())
+            {
+                var post = context.Posts.Find(id);
+                context.Remove(post);
+                context.SaveChanges();
+            }
+        }
+
+        public Post BuscaPorId(int id)
+        {
+            using (BlogContext context = new BlogContext())
+            {
+                return context.Posts.Find(id);
+            }
+         }
+
+        public void Altera(Post post)
+        {
+            using (BlogContext context = new BlogContext())
+            {
+                context.Entry(post).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+
+                //context.Posts.Update(post);
+                context.SaveChanges();
             }
         }
     }

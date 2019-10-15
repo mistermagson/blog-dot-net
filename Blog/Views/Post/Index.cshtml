@@ -9,16 +9,22 @@
             <th style="border: 1px solid black">Título</th>
             <th style="border: 1px solid black">Resumo</th>
             <th style="border: 1px solid black">Categoria</th>
+            <th style="border: 1px solid black">Excluir</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var post in Model)
         {
-            <tr >
-                <td style="border: 1px solid black">@post.Titulo </td>
-                <td style="border: 1px solid black">@post.Resumo</td>
-                <td style="border: 1px solid black">@post.Categoria</td>
-            </tr>
+        <tr>
+            <td style="border: 1px solid black">
+                <a href="/post/visualiza/@post.Id"> 
+                    @post.Titulo 
+                </a>
+            </td>
+            <td style="border: 1px solid black">@post.Resumo</td>
+            <td style="border: 1px solid black">@post.Categoria</td>
+            <td style="border: 1px solid black"><a href="/post/delete/@post.Id">Delete</a> </td>
+        </tr>
 
         }
     </tbody>

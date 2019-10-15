@@ -1,6 +1,7 @@
 ﻿using Blog.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,6 +26,7 @@ namespace Blog.Infra
             string stringConexao = configuration.GetConnectionString("Blog");
 
             optionsBuilder.UseSqlServer(stringConexao);
+                      
         }
     }
 }
