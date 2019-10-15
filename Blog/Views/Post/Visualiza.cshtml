@@ -2,18 +2,23 @@
 
 <form method="post" action="/Post/Altera">
     <input type="hidden" name="id" value="@Model.Id" />
+    <input type="hidden" name="datapublicado" value="@Model.DataPublicacao" />
+    <input type="hidden" name="publicado" value="@Model.Publicado.ToString()" />
 
     <label>
         Título: <input name="titulo" value="@Model.Titulo" />
     </label>
+    @Html.ValidationMessage("titulo");
 
     <label>
         Resumo: <input name="resumo" value="@Model.Resumo" />
     </label>
+    @Html.ValidationMessage("resumo");
 
     <label>
-        Categoria: <input name="categoria" value="@Model.Categoria"  />
+        Categoria: <input name="categoria" value="@Model.Categoria" />
     </label>
+    @Html.ValidationMessage("categoria");
 
     <input type="submit" value="Alterar" />
 </form>

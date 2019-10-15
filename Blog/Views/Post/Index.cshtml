@@ -9,7 +9,9 @@
             <th style="border: 1px solid black">Título</th>
             <th style="border: 1px solid black">Resumo</th>
             <th style="border: 1px solid black">Categoria</th>
-            <th style="border: 1px solid black">Excluir</th>
+            <th style="border: 1px solid black">Publicado</th>
+            <th style="border: 1px solid black" colspan="2">Ações</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -17,13 +19,26 @@
         {
         <tr>
             <td style="border: 1px solid black">
-                <a href="/post/visualiza/@post.Id"> 
-                    @post.Titulo 
+                <a href="/post/visualiza/@post.Id">
+                    @post.Titulo
                 </a>
             </td>
             <td style="border: 1px solid black">@post.Resumo</td>
             <td style="border: 1px solid black">@post.Categoria</td>
+            <td style="border: 1px solid black">
+                @if (post.Publicado)
+                {
+                    @Html.Raw(string.Format("{0:dd/MM/yyyy}", post.DataPublicacao))
+
+                }
+                else
+                {
+                    @Html.Raw("Não")
+                }
+
+            </td>
             <td style="border: 1px solid black"><a href="/post/delete/@post.Id">Delete</a> </td>
+            <td style="border: 1px solid black"><a href="/post/publicapost/@post.Id">Publicar</a> </td>
         </tr>
 
         }

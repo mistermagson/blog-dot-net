@@ -1,2 +1,3 @@
 # Para todos os arquivos e sub-pastas localizados na pasta vendor/
 .vs/
+.Blog/bin/Debug/

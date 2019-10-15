@@ -25,19 +25,27 @@ namespace Blog.Controllers
 
         public IActionResult Novo()
         {
-            return View();
+            return View(new Post());
         }
 
         [HttpPost]
         public IActionResult Adiciona(Post post)
         {
+            if (ModelState.IsValid)
+            {
+                PostDAO dao = new PostDAO();
+                dao.Adiciona(post);
 
-            PostDAO dao = new PostDAO();
-            dao.Adiciona(post);
+                List<Post> lista = dao.Lista();
 
-            List<Post> lista = dao.Lista();
+                return RedirectToAction("Index");
 
-            return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Novo", post);
+            }
+
         }
 
         
@@ -70,6 +78,23 @@ namespace Blog.Controllers
         {
 
             PostDAO dao = new PostDAO();
+            dao.Altera(post);
+
+            List<Post> lista = dao.Lista();
+
+            return RedirectToAction("Index");
+        }
+
+        
+        public IActionResult PublicaPost(int id)
+        {
+            PostDAO dao = new PostDAO();
+
+            var post = dao.BuscaPorId(id);
+
+            post.DataPublicacao = DateTime.Now;
+            post.Publicado = true;
+
             dao.Altera(post);
 
             List<Post> lista = dao.Lista();
