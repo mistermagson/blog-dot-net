@@ -1,13 +1,12 @@
-﻿
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
-@model Blog.Models.Post
+﻿@model Post
 
 <form asp-controller="Post" asp-action="Adiciona" method="post">
     @Html.EditorFor(p => p)
 
     <input type="submit" value="Cadastrar" />
 </form>
-<script src="~/lib/jquery/jquery.js"></script>
-<script src="~/lib/jquery-validate/jquery.validate.js"></script>
-<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+@section Scripts{
+    <partial name="_Scripts" />
+}
+
