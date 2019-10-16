@@ -2,12 +2,12 @@
 
 <form method="post" action="/Post/Adiciona">
     <label>
-        Título: <input name="titulo" value="@Model.Titulo" />
+        Título: <input name="titulo" value="@Model.Titulo" required/>
     </label>
     @Html.ValidationMessage("titulo")
 
     <label>
-        Resumo: <input name="resumo" value="@Model.Resumo" />
+        Resumo: <input name="resumo" value="@Model.Resumo" required maxlength="50" />
     </label>
     @Html.ValidationMessage("resumo")
 
@@ -18,3 +18,8 @@
 
     <input type="submit" value="Cadastrar" />
 </form>
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/jquery-validate/jquery.validate.js"></script>
+<script>
+    $('form').validade();
+</script>
