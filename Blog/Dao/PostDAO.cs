@@ -15,10 +15,19 @@ namespace Blog.Dao
         {
             using(BlogContext context = new BlogContext())
             {
-                var lista = context.Posts.ToList();
-                return lista;
+                return context.Posts.ToList();
             }
              
+        }
+
+        public IList<Post> ListaPublicados()
+        {
+            using (BlogContext context = new BlogContext())
+            {
+                return context.Posts.Where(p => p.Publicado)
+                    .OrderByDescending(p => p.DataPublicacao)
+                    .ToList();
+            }
         }
 
         public void Adiciona(Post p)
@@ -76,6 +85,16 @@ namespace Blog.Dao
                     .Select(p => p.Categoria).Distinct().ToList(); }
         }
 
+        public IList<Post> BuscaPeloTermo(string termo)
+        {
+            using (var contexto = new BlogContext())
+            {
+                return contexto.Posts.Where(p => p.Publicado && (p.Titulo.Contains(termo) || p.Resumo.Contains(termo)))
+                    .ToList();
+                
+            }
+                
+        }
         //internal void Publica(int id)
         //{
         //    using (BlogContext context = new BlogContext())

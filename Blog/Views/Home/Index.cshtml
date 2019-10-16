@@ -1,8 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@model IList<Post>
 
-<html>
-<head></head>
-<body>
-    <h2>Olá mundo com ASP.NET Core MVC</h2>
-</body>
-</html>
+<div>
+    @foreach (var p in Model)
+    {
+        <article>
+            <h1>@p.Titulo</h1>
+            <p>@p.Resumo</p>
+        </article>
+    }
+</div>

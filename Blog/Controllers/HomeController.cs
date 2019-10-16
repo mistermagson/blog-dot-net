@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blog.Dao;
+using Blog.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,16 @@ namespace Blog.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            PostDAO dao = new PostDAO();
+            IList<Post> posts = dao.ListaPublicados();
+            return View(posts);
+        }
+
+        public IActionResult Busca(string termo)
+        {
+            PostDAO dao = new PostDAO();
+            IList<Post> posts = dao.BuscaPeloTermo(termo);
+            return View("Index", posts);
         }
     }
 }
