@@ -1,25 +1,26 @@
 ﻿@model Blog.Models.Post
 
-<form method="post" action="/Post/Adiciona">
-    <label>
-        Título: <input name="titulo" value="@Model.Titulo" required/>
-    </label>
-    @Html.ValidationMessage("titulo")
 
-    <label>
-        Resumo: <input name="resumo" value="@Model.Resumo" required maxlength="50" />
-    </label>
-    @Html.ValidationMessage("resumo")
+@using (Html.BeginForm("Adiciona", "Post", FormMethod.Post))
+{
+    @Html.LabelFor(p => p.Titulo)
+    @Html.TextBoxFor(p => p.Titulo)
+    @Html.ValidationMessageFor(p => p.Titulo)
 
-    <label>
-        Categoria: <input name="categoria" value="@Model.Categoria" />
-    </label>
-    @Html.ValidationMessage("categoria")
+    @Html.LabelFor(p => p.Resumo)
+    @Html.TextBoxFor(p => p.Resumo)
+    @Html.ValidationMessageFor(p => p.Resumo)
+
+    @Html.LabelFor(p => p.Categoria)
+    @Html.TextBoxFor(p => p.Categoria)
+    @Html.ValidationMessageFor(p => p.Categoria)
 
     <input type="submit" value="Cadastrar" />
-</form>
+}
+
 <script src="~/lib/jquery/jquery.js"></script>
 <script src="~/lib/jquery-validate/jquery.validate.js"></script>
-<script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+@*<script>
     $('form').validade();
-</script>
+</script>*@

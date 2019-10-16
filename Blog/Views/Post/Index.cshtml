@@ -23,10 +23,6 @@
             <tr>
                 <td style="border: 1px solid black">
                     @Html.ActionLink(post.Titulo, "Visualiza", new { id = post.Id })
-
-                    @*<a href="/post/visualiza/@post.Id">
-                            @post.Titulo
-                        </a>*@
                 </td>
                 <td style="border: 1px solid black">@post.Resumo</td>
                 <td style="border: 1px solid black">@post.Categoria</td>
@@ -42,11 +38,9 @@
                     }
 
                 </td>
-                @* <td style="border: 1px solid black"><a href="/post/delete/@post.Id">Delete</a> </td>*@
                 <td style="border: 1px solid black">
                     @Html.ActionLink("Remover", "Delete", new { id = post.Id })
                 </td>
-                @*<td style="border: 1px solid black"><a href="/post/publicapost/@post.Id">Publicar</a> </td>*@
                 <td style="border: 1px solid black">
                     @Html.ActionLink("Publicar", "publicapost", new { id = post.Id })
                 </td>
@@ -56,7 +50,5 @@
         }
     </tbody>
 </table>
-
-@*<a href="@Url.Action("Novo", "Post")">Novo</a>*@
 
 
