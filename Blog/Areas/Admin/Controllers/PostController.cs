@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Blog.Controllers
 {
+    [Area("Admin")]
     public class PostController : Controller
     {
 
