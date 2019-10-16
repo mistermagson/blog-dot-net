@@ -1,0 +1,13 @@
+﻿<script src="~/lib/jqueryui/jquery-ui.js"></script>
+<script>
+    $("input[name='Categoria']").autocomplete({
+        source: function (request, response) {
+            $.post(
+                "@Url.Action("CategoriaAutocomplete")",
+                { termoDigitado: request.term },
+                function (data) {
+                    response(data);
+                });
+        }
+    });		
+</script>
