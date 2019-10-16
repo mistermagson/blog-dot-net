@@ -1,29 +1,27 @@
-﻿@model Blog.Models.Post
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<form method="post" action="/Post/Altera">
-    <input type="hidden" name="id" value="@Model.Id" />
-    <input type="hidden" name="datapublicado" value="@Model.DataPublicacao" />
-    <input type="hidden" name="publicado" value="@Model.Publicado.ToString()" />
+@model Blog.Models.Post
 
-    <label>
-        Título: <input name="titulo" value="@Model.Titulo" required />
-    </label>
-    @Html.ValidationMessage("titulo");
+<form asp-controller="Post" asp-action="Altera" method="post">
+    
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="DataPublicacao" />
+    <input type="hidden" asp-for="Publicado" />
 
-    <label>
-        Resumo: <input name="resumo" value="@Model.Resumo" required maxlength="50" />
-    </label>
-    @Html.ValidationMessage("resumo");
+    <label asp-for="Titulo"></label>
+    <input asp-for="Titulo" />
+    <span asp-validation-for="Titulo"></span>
 
-    <label>
-        Categoria: <input name="categoria" value="@Model.Categoria" />
-    </label>
-    @Html.ValidationMessage("categoria");
+    <label asp-for="Resumo"></label>
+    <input asp-for="Resumo" />
+    <span asp-validation-for="Resumo"></span>
+
+    <label asp-for="Categoria"></label>
+    <input asp-for="Categoria" />
+    <span asp-validation-for="Categoria"></span>
 
     <input type="submit" value="Alterar" />
 </form>
-<script src="~/lib/jquery/jquery.js"></script>
-<script src="~/lib/jquery-validate/jquery.validate.js"></script>
-<script>
-    $('form').validade();
-</script>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
