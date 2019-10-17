@@ -10,7 +10,6 @@ C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor
 C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Post\Novo.g.cshtml.cs
 C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Post\Visualiza.g.cshtml.cs
 C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\Post.g.cshtml.cs
 C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Cabecalho.g.cshtml.cs
 C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Lateral.g.cshtml.cs
 C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -36,3 +35,5 @@ C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor
 C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Shared\MenuAdmin.g.cshtml.cs
 C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\_ViewStart.g.cshtml.cs
 C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Shared\_Scripts.g.cshtml.cs
+C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csprojAssemblyReference.cache
+C:\Users\aspnet8498\leandro\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Shared\EditorTemplates\Post.g.cshtml.cs
