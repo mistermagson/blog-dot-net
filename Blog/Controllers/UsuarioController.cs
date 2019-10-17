@@ -36,7 +36,7 @@ namespace Blog.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("login.Invalido", "Login	ou	senha	incorretos");
+                    ModelState.AddModelError("loginInvalido", "Login	ou	senha	incorretos");
                 }
             }
 
