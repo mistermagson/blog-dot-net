@@ -3,8 +3,12 @@
 
 <h2>Lista de Posts</h2>
 
-@Html.ActionLink("Incluir Post", "Novo", null, null, new {@class = "btn btn-primary"})
+<br />
 
+<div class="form-control">
+    @Html.ActionLink("Incluir Post", "Novo", null, null, new { @class = "btn btn-primary" })
+
+</div>
 <table class="table table-striped table-hover table-bordered">
     <thead>
         <tr>
@@ -39,10 +43,11 @@
 
                 </td>
                 <td style="border: 1px solid black">
-                    @Html.ActionLink("Remover", "Delete", new { id = post.Id })
+                   
+                    @Html.ActionLink("Remover", "Delete", new { id = post.Id }, new { @class = "btn btn-danger" })
                 </td>
                 <td style="border: 1px solid black">
-                    @Html.ActionLink("Publicar", "publicapost", new { id = post.Id })
+                    @Html.ActionLink("Publicar", "publicapost", new { id = post.Id }, new { @class = "btn btn-success" })
                 </td>
 
             </tr>

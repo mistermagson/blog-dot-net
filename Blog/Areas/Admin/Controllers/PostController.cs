@@ -14,12 +14,18 @@ namespace Blog.Controllers
     [Area("Admin")]
     public class PostController : Controller
     {
+        private readonly PostDAO postDAO;
+
+        public PostController(PostDAO postDAO)
+        {
+            this.postDAO = postDAO;
+        }
 
         public IActionResult Index()
         {
             // ViewBag.ListaPost = posts;
 
-            List<Post> posts = new PostDAO().Lista();
+            List<Post> posts = postDAO.Lista();
             return View(posts);
 
         }
@@ -34,10 +40,9 @@ namespace Blog.Controllers
         {
             if (ModelState.IsValid)
             {
-                PostDAO dao = new PostDAO();
-                dao.Adiciona(post);
+                postDAO.Adiciona(post);
 
-                List<Post> lista = dao.Lista();
+                List<Post> lista = postDAO.Lista();
 
                 return RedirectToAction("Index");
 
@@ -52,24 +57,20 @@ namespace Blog.Controllers
         
         public IActionResult Categoria([Bind(Prefix ="id")] string categoria)
         {
-            PostDAO dao = new PostDAO();
-
-            List<Post> posts = dao.BuscaPorCategoria(categoria);
-
+            List<Post> posts = postDAO.BuscaPorCategoria(categoria);
             return View("Index",posts);
         }
 
         public IActionResult Delete(int id)
         {
-            PostDAO dao = new PostDAO();
-            dao.Remove(id);
+           postDAO.Remove(id);
             return RedirectToAction("Index");
         }
 
         public IActionResult Visualiza(int id)
         {
-            PostDAO dao = new PostDAO();
-            var post = dao.BuscaPorId(id);
+            
+            var post = postDAO.BuscaPorId(id);
 
             return View(post);
         }
@@ -78,10 +79,9 @@ namespace Blog.Controllers
         public IActionResult Altera(Post post)
         {
 
-            PostDAO dao = new PostDAO();
-            dao.Altera(post);
+            postDAO.Altera(post);
 
-            List<Post> lista = dao.Lista();
+            postDAO.Lista();
 
             return RedirectToAction("Index");
         }
@@ -89,16 +89,14 @@ namespace Blog.Controllers
         
         public IActionResult PublicaPost(int id)
         {
-            PostDAO dao = new PostDAO();
-
-            var post = dao.BuscaPorId(id);
+            var post = postDAO.BuscaPorId(id);
 
             post.DataPublicacao = DateTime.Now;
             post.Publicado = true;
 
-            dao.Altera(post);
+            postDAO.Altera(post);
 
-            List<Post> lista = dao.Lista();
+            List<Post> lista = postDAO.Lista();
 
             return RedirectToAction("Index");
         }
@@ -106,8 +104,7 @@ namespace Blog.Controllers
         [HttpPost]
         public IActionResult CategoriaAutocomplete(string termoDigitado)
         {
-            PostDAO dao = new PostDAO();
-            var model = dao.ListaCategoriasQueContemTermo(termoDigitado);
+            var model = postDAO.ListaCategoriasQueContemTermo(termoDigitado);
             return Json(model);
 
         }

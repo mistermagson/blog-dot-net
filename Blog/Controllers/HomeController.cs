@@ -10,18 +10,22 @@ namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly PostDAO postDAO;
+
+        public HomeController(PostDAO postDAO)
+        {
+            this.postDAO = postDAO;
+        }
 
         public IActionResult Index()
         {
-            PostDAO dao = new PostDAO();
-            IList<Post> posts = dao.ListaPublicados();
+            IList<Post> posts = postDAO.ListaPublicados();
             return View(posts);
         }
 
         public IActionResult Busca(string termo)
         {
-            PostDAO dao = new PostDAO();
-            IList<Post> posts = dao.BuscaPeloTermo(termo);
+            IList<Post> posts = postDAO.BuscaPeloTermo(termo);
             return View("Index", posts);
         }
     }

@@ -1,3 +1,6 @@
 # Para todos os arquivos e sub-pastas localizados na pasta vendor/
 .vs/
 .Blog/bin/Debug/
+.Blog/bin/Debug/netcoreapp2.1/
+.Blog/obj/
+.Blog/obj/Debug/netcoreapp2.1/
