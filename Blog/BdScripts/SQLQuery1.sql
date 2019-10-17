@@ -9,3 +9,5 @@
 --INSERT INTO [dbo].[Posts] ([Titulo], [Resumo], [Categoria]) VALUES (N'Homem Aranha de Volta ao Lar', N'Muita teia', N'Aventura')
 --INSERT INTO [dbo].[Posts] ([Titulo], [Resumo], [Categoria]) VALUES (N'Vingadores', N'Filme dos Vingadores', N'Aventura')
 --SET IDENTITY_INSERT [dbo].[Posts] OFF
+
+--insert into [dbo].[Usuarios] (nome, senha, email) values ('Leandro', '1234', 'leandro.long@gmail.com');

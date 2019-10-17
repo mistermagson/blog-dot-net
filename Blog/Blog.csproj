@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20191015181745_Classificacao.cs" />
     <Compile Remove="Migrations\20191015181745_Classificacao.Designer.cs" />
+    <Compile Remove="Migrations\20191017181000_AdicionaUsuario.cs" />
+    <Compile Remove="Migrations\20191017181000_AdicionaUsuario.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
