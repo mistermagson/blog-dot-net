@@ -1,5 +1,6 @@
 ﻿using Blog.Infra;
 using Blog.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,18 +17,26 @@ namespace Blog.Dao
 
         public List<Post> Lista()
         {
-            return context.Posts.ToList();
+            return context.Posts.Include(p => p.Autor).ToList();
         }
 
         public IList<Post> ListaPublicados()
         {
-            return context.Posts.Where(p => p.Publicado)
+            return context.Posts.Include(p => p.Autor).Where(p => p.Publicado)
                 .OrderByDescending(p => p.DataPublicacao)
                 .ToList();
         }
 
         public void Adiciona(Post p)
         {
+            context.Posts.Add(p);
+            context.SaveChanges();
+        }
+
+        public void Adiciona(Post p, Usuario u)
+        {
+            context.Usuarios.Attach(u);
+            p.Autor = u;
             context.Posts.Add(p);
             context.SaveChanges();
         }

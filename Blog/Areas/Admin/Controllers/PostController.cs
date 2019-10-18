@@ -2,7 +2,9 @@
 using Blog.Filters;
 using Blog.Infra;
 using Blog.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -42,12 +44,10 @@ namespace Blog.Controllers
         {
             if (ModelState.IsValid)
             {
-                postDAO.Adiciona(post);
-
-                List<Post> lista = postDAO.Lista();
-
+                string usuarioJson = HttpContext.Session.GetString("usuario");
+                var usuarioLogado = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
+                postDAO.Adiciona(post, usuarioLogado);
                 return RedirectToAction("Index");
-
             }
             else
             {
