@@ -38,7 +38,7 @@ namespace Blog
             services.AddTransient<PostDAO>();
             services.AddTransient<UsuarioDAO>();
 
-            services.AddSession();
+            services.AddSession( options => options.IdleTimeout = TimeSpan.FromSeconds(30));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
