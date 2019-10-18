@@ -55,7 +55,7 @@ using Blog.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(15, 175, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7340554a7fa2412c84e19acd9dbd63b8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f50832484014cc68637ec8dcea5c2ec", async() => {
                 BeginContext(79, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
@@ -97,7 +97,7 @@ Write(Html.EditorFor(p => p));
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(217, 27, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "05abc839ada4404cb1e139f781749296", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b06769430d72445fb827b60206509b18", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -116,7 +116,7 @@ Write(Html.EditorFor(p => p));
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(250, 30, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "035e68e6439745bab913b9c5da38f883", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "58f242767db64bb182915bfd683f13e2", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

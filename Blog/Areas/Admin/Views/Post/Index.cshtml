@@ -31,10 +31,7 @@
             </td>
             <td style="border: 1px solid black">@post.Resumo</td>
             <td style="border: 1px solid black">@post.Categoria</td>
-            @{ 
-                var nomeAutor = post.Autor != null ? post.Autor.Nome : "";
-            }
-            <td style="border: 1px solid black">@nomeAutor</td>
+            <td style="border: 1px solid black">@post.Autor?.Nome</td>
             <td style="border: 1px solid black">
                 @if (post.Publicado)
                 {

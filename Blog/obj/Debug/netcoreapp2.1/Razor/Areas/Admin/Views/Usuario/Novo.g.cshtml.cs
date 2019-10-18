@@ -52,7 +52,7 @@ using Blog.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(18, 178, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "962302b672894b08b8c5ccde249a2982", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94f0aeec468b4dafb45b2b1691fd0fad", async() => {
                 BeginContext(85, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
