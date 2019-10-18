@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace Blog.Controllers
 {
     [Area("Admin")]
+    [AutorizacaoFilter]
     public class PostController : Controller
     {
         private readonly PostDAO postDAO;

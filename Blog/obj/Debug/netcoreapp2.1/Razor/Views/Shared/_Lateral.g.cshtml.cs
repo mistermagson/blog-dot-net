@@ -53,7 +53,7 @@ using Blog.Models;
             WriteLiteral("<aside>\r\n    <div>\r\n        <h3>Buscar</h3>\r\n        ");
             EndContext();
             BeginContext(53, 410, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c0553ccbb8848f191d9aa01bb6b99d3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b1544f4427f4b11b6376a2b42726f55", async() => {
                 BeginContext(133, 323, true);
                 WriteLiteral(@"
             <div class=""input-group"">

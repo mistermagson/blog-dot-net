@@ -1,4 +1,5 @@
 ﻿using Blog.Dao;
+using Blog.Filters;
 using Blog.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 namespace Blog.Controllers
 {
     [Area("Admin")]
+    [AutorizacaoFilter]
     public class UsuarioController : Controller
     {
         private readonly UsuarioDAO usuarioDAO;
@@ -38,9 +40,7 @@ namespace Blog.Controllers
             {
                 usuarioDAO.Adiciona(usuario);
                 return RedirectToAction("Index");
-
             }
-
             return View("Novo", usuario);
         }
 
