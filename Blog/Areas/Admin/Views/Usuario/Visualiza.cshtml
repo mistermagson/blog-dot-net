@@ -1,0 +1,13 @@
+﻿@model Blog.Models.Usuario
+
+<form asp-controller="Usuario" asp-action="Altera" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    @Html.EditorFor(p => p)
+
+    <input type="submit" value="Alterar" class="btn	btn-primary" />
+</form>
+
+
+

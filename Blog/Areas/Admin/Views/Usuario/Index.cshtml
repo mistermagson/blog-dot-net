@@ -1,0 +1,41 @@
+﻿
+@model List<Usuario>
+
+<h2>Lista de Usuários</h2>
+
+<br />
+
+<div class="form-control">
+    @Html.ActionLink("Incluir Usuário", "Novo", null, null, new { @class = "btn btn-primary" })
+
+</div>
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <!-- TH significa head, que é o cabeçalho -->
+            <th style="border: 1px solid black">Nome</th>
+            <th style="border: 1px solid black">Email</th>
+            <th style="border: 1px solid black" colspan="2">Ações</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usuario in Model)
+        {
+            <tr>
+                <td style="border: 1px solid black">
+                    @Html.ActionLink(usuario.Nome, "Visualiza", new { id = usuario.Id })
+                </td>
+                <td style="border: 1px solid black">@usuario.Email</td>
+                
+                <td style="border: 1px solid black">
+                   
+                    @Html.ActionLink("Remover", "Delete", new { id = usuario.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+

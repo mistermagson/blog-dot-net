@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace Blog.Controllers
 {
-    public class UsuarioController : Controller
+    public class LoginController : Controller
     {
         private readonly UsuarioDAO usuarioDAO;
 
-        public UsuarioController(UsuarioDAO usuarioDAO)
+        public LoginController(UsuarioDAO usuarioDAO)
         {
             this.usuarioDAO = usuarioDAO;
         }
 
-        public IActionResult Login()
+        public IActionResult Index()
         {
             return View();
         }
@@ -29,7 +29,7 @@ namespace Blog.Controllers
             if (ModelState.IsValid)
             {
                 var usuario = usuarioDAO.Busca(loginViewModel.Login, loginViewModel.Senha);
-                if(usuario != null)
+                if (usuario != null)
                 {
                     HttpContext.Session.SetString("usuario", JsonConvert.SerializeObject(usuario));
                     return RedirectToAction("Index", "Post", new { area = "Admin" });
@@ -40,7 +40,7 @@ namespace Blog.Controllers
                 }
             }
 
-            return View("Login",loginViewModel);
+            return View("Login", loginViewModel);
         }
     }
 }
