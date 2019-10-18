@@ -17,5 +17,7 @@ namespace Blog.Models
         public string Email { get; set; }
         [Required]
         public string Nome { get; set; }
+
+        List<Post> posts { get; set; }
     }
 }

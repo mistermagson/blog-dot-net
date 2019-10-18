@@ -19,8 +19,8 @@ namespace Blog.Filters
                 filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(
                 new {
                     area = "",
-                    controller = "Usuario",
-                    action = "Login"
+                    controller = "Login",
+                    action = "Index"
                 }));
             }
         }
